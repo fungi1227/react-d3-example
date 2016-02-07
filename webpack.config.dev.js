@@ -18,10 +18,16 @@ module.exports = {
     new webpack.NoErrorsPlugin()
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?/,
+    loaders: [
+    {
+      test: /\.js$/,
       loaders: ['babel'],
       include: path.join(__dirname, 'src')
-    }]
+    },
+    {
+      test: /\.less$/,
+      loader: "style!css!less"
+    }
+    ]
   }
 };
